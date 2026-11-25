@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f5e8c9">
+  <title>夜巡环线 · 纸墨游乐场</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="../visual/paper-ink/paper.css">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="../visual/paper-ink/scene.js"></script>
+  <script defer src="game.js"></script><script defer src="screen.js"></script>
+</head>
+<body>
+  <svg id="symbols" class="defs" aria-hidden="true"></svg>
+  <div class="shell">
+    <header><h1><i class="mark" aria-hidden="true"></i>夜巡环线</h1><nav><button id="help">规则</button><button id="restart">重开</button></nav></header>
+    <main>
+      <div class="hud"><strong id="round"></strong><span>生命 <b id="hp"></b></span><span>零件 <b id="scrap"></b></span></div>
+      <div class="layout">
+        <section aria-label="棋盘"><div class="pi-print stage"><svg id="board" viewBox="152 24 792 422" role="group" aria-label="十格环形棋盘"></svg></div>
+          <div class="board-note"><div id="wave"></div><p id="hint" role="status" hidden></p></div></section>
+        <aside class="console" aria-label="当前行动">
+          <section id="bag-tray" hidden><div class="bag-heading"><h2>袋中余数</h2><span id="bag-status"></span></div><div id="bag-faces"></div></section>
+          <div id="draft"></div><div id="actions"></div>
+          <div class="kits" hidden><span>建造</span><button data-kit="amp"></button><button data-kit="gun"></button></div>
+        </aside>
+      </div>
+      <div class="archive"><details id="rig"><summary>已装协议 <span id="slots"></span></summary><div id="deck"></div></details>
+        <details><summary>巡行记录</summary><p id="metrics"></p><div id="events" role="log"></div></details></div>
+    </main>
+  </div>
+  <dialog id="manual" aria-label="规则"><h2>规则</h2><dl>
+    <dt>01　选牌与部署</dt><dd>每个奇数回合从三个随机协议中选一个永久生效。想让“击杀”触发“回收”，再用“获得零件”触发攻击？看牌面临场决定。可花 2 零件刷新一次。投前还可在任意空路格安装一件永久装置。04、09 号每波各能领取 2 零件一次。</dd>
+    <dt>02　选向巡行</dt><dd><span id="movement-rule">四面骰决定步数；投完再选方向。</span>每经过一格先触发装置，再拾取补给，最后每只仍在本格的感染体令你失去 1 生命。出发格不触发。</dd>
+    <dt>03　构筑连锁</dt><dd>弩炮沿本次走向射击本格及前方两格内最近的一只，造成 1 伤害。经过电容后，下次弩炮命中改为 3 伤害。电荷可带过回合，但不能叠加。</dd>
+    <dt>04　抵挡尸潮</dt><dd>第 3、6、9、12 回合走完，每两只活敌造成 1 伤害（向上取整）。非终局时，残敌再沿标记方向移动一格，并补入新敌。四波规模为 2 / 3 / 5 / 8 只。最后一次冲击后生命大于 0 即获胜。</dd>
+  </dl><div class="edition"><span id="edition-title"></span><span id="seed"></span><a id="compare" target="_blank" rel="noopener"></a></div><button class="primary close">返回棋盘</button></dialog>
+  <dialog id="reset" aria-label="重新开局"><h2>重新开局？</h2><div class="reset-actions"><button id="same">同一种子</button><button id="fresh">新种子</button><button class="close">取消</button></div></dialog>
+</body></html>

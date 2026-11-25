@@ -1,0 +1,51 @@
+:root {
+  --pi-paper: #f5e8c9;
+  --pi-ink: #203c41;
+  --pi-field: #a7c1ae;
+  --pi-signal: #eeae46;
+  --pi-threat: #c75142;
+  --pi-water: #537f98;
+  --pi-grain: .47;
+  --pi-period: 256px;
+  --pi-font: system-ui, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --pi-display: "Songti SC", "Noto Serif CJK SC", "SimSun", Georgia, serif;
+  --pi-rule: 1.5px solid var(--pi-ink);
+  --pi-shadow: 3px 4px 0 var(--pi-ink);
+}
+.pi-print {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--pi-paper);
+}
+.pi-print::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+  background: url("./paper-grain.png") repeat left top / var(--pi-period) var(--pi-period);
+  mix-blend-mode: soft-light;
+  opacity: var(--pi-grain);
+}
+.shadow { fill: var(--pi-ink); opacity: .16; }
+.goldshade { fill: color-mix(in srgb, var(--pi-signal) 67%, var(--pi-ink)); }
+.pi-hud { position: relative; z-index: 2; }
+.pi-action {
+  padding: .6em 1.1em;
+  border: var(--pi-rule);
+  border-radius: 3px;
+  background: var(--pi-paper);
+  color: var(--pi-ink);
+  font: 650 1rem var(--pi-font);
+  cursor: pointer;
+}
+.pi-action[aria-pressed="true"], .pi-action.primary {
+  background: var(--pi-signal);
+  box-shadow: var(--pi-shadow);
+}
+.pi-action:focus-visible { outline: 3px solid var(--pi-ink); outline-offset: 4px; }
+@media (forced-colors: active) {
+  .pi-print::after { display: none; }
+  .pi-action[aria-pressed="true"] { border: 3px double Highlight; }
+}

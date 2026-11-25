@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5e8c9">
+  <title>纸墨游乐场 · Paper Ink Arcade</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="visual/paper-ink/paper.css">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--pi-paper); color: var(--pi-ink); font: 1rem/1.6 var(--pi-font); }
+    main { width: min(100% - 32px, 850px); margin: 6vh auto; }
+    h1 { font: 800 clamp(2.25rem, 6vw, 4rem)/1.15 var(--pi-display); margin: 0; }
+    h2 { font-size: 1.25rem; margin: 0; }
+    section { border-top: var(--pi-rule); padding: 16px 0; }
+    header { margin-bottom: 24px; }
+    .choices { display: flex; flex-wrap: wrap; gap: 10px; margin: 12px 0 4px; }
+    a { color: inherit; text-underline-offset: 4px; }
+    .choices a { text-decoration: none; }
+    .preview { display: block; width: min(100%, 620px); }
+    .preview img { display: block; width: 100%; height: auto; margin: 12px 0 6px; }
+    a:focus-visible { outline: 3px solid var(--pi-ink); outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <header><h1>纸墨游乐场</h1></header>
+    <section aria-labelledby="game"><h2 id="game">01 · 夜巡环线</h2>
+      <div class="choices">
+        <a class="pi-action primary" href="01-dead-circuit/index.html?mode=bag&amp;seed=23">B · 明袋与押线</a>
+        <a class="pi-action" href="01-dead-circuit/index.html?mode=classic&amp;seed=23">A · 独立骰</a>
+      </div>
+    </section>
+    <section aria-labelledby="visual"><h2 id="visual">纸墨 · 视觉样板</h2>
+      <a class="preview" href="visual/paper-ink/index.html"><img src="visual/paper-ink/board-preview.png" alt="暖黄色巡夜人站在纸纹棋盘上"><span>查看样板</span></a>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5e8c9">
+  <title>纸墨 · 风格样板</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="paper.css">
+  <link rel="stylesheet" href="specimen.css">
+  <script src="scene.js" defer></script>
+  <script src="specimen.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="top"><strong class="brand"><i aria-hidden="true"></i>纸墨</strong><span>风格样板 <b>0.1</b></span></div>
+    <section class="pi-print" aria-label="风格预览">
+      <div class="pi-hud"><h1 id="name">夜巡环线</h1><div class="stats" id="stats">回合 6 / 12　 生命 6 / 7</div></div>
+      <svg viewBox="0 0 1080 465" id="scene" role="img" aria-labelledby="scene-title">
+        <title id="scene-title">十格环线上的巡夜人与感染体</title>
+        <g id="art"></g>
+      </svg>
+    </section>
+    <div class="tools">
+      <div class="switch" role="group" aria-label="场景"><button class="pi-action" data-scene="board" aria-pressed="true">环线棋盘</button><button class="pi-action" data-scene="platform" aria-pressed="false">横版跳跃</button></div>
+      <label>纸纹 <input type="range" id="grain" min="0" max="100" value="47"><output for="grain">47%</output></label>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f9f2e1; font-family: var(--pi-font); color: var(--pi-ink); }
+main { width: min(1200px, 100%); margin: auto; padding: 18px clamp(12px, 4vw, 54px) 24px; }
+.top, .brand, .tools, .switch, label, .pi-hud { display: flex; align-items: center; }
+.top, .pi-hud, .tools { justify-content: space-between; gap: 12px; }
+.top { margin-bottom: 14px; padding-bottom: 12px; border-bottom: var(--pi-rule); font-size: 14px; }
+.brand { gap: 9px; font-size: 19px; letter-spacing: .12em; }
+.brand i { width: 21px; height: 22px; background: var(--pi-ink); clip-path: polygon(0 24%, 63% 0, 62% 27%, 99% 15%, 96% 75%, 34% 100%, 36% 73%, 0 87%); }
+.top b { font: 500 12px ui-monospace, monospace; }
+.pi-print { border: var(--pi-rule); }
+.pi-hud { padding: 18px clamp(14px, 3vw, 34px) 0; }
+h1 { font: 800 clamp(24px, 4vw, 46px)/1.2 var(--pi-display); margin: 0; letter-spacing: -.04em; }
+.stats { font-weight: 650; font-size: clamp(12px, 1.6vw, 16px); font-variant-numeric: tabular-nums; }
+#scene { display: block; width: 100%; height: auto; }
+.tools { flex-wrap: wrap; margin-top: 18px; }
+.switch, label { gap: 9px; }
+label { font-size: 14px; }
+input { width: clamp(80px, 15vw, 140px); accent-color: var(--pi-ink); }
+output { min-width: 4ch; font-variant-numeric: tabular-nums; }
+.tile-number { font: 650 12px var(--pi-font); fill: var(--pi-ink); opacity: .83; }
+@media (max-width: 560px) {
+  main { padding: 12px 9px; }
+  .pi-hud { padding: 12px 12px 1px; }
+  #scene { width: 124%; max-width: none; margin-left: -12%; }
+  .tools { gap: 14px; }
+  .pi-action { padding: .5em .8em; font-size: 14px; }
+}
