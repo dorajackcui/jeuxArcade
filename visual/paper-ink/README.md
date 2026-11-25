@@ -1,4 +1,4 @@
-# 纸墨 0.1 · Playground 视觉语言
+# 纸墨 0.1 · jeux arcade 视觉语言
 
 **设计目标：像一张可以玩的套色版画，而不是一个开了噪声滤镜的游戏。** 对照的是 [How to Say Goodbye](https://store.steampowered.com/app/1709700/How_to_Say_Goodbye/) 的绘本感。信使、刺果敌人、场景和纹理是原创图形。[夜巡环线](../../01-dead-circuit/index.html) 的两个可玩版本已与样板共用 [scene.js](scene.js) 的剪影、场景和棋格几何；横版仍是独立风格试样。
 
